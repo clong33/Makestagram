@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import FirebaseAuth
 import FirebaseAuthUI
+import FirebaseDatabase
 
 typealias FIRUser = FirebaseAuth.User
 
@@ -48,6 +49,24 @@ extension LoginViewController: FUIAuthDelegate {
             assertionFailure("error signing in: \(error.localizedDescription)")
             return
         }
-        print("handle user signup / login")
+        
+        //First we check that the FIRUser returned from authentication is not nil by unwrapping it. We guard this statement, because we cannot proceed further if the user is nil. We need the FIRUser object's uid property to build the relative path for the user at users/#{uid}.
+        guard let user = user
+            else { return }
+        
+        //We construct a relative path to the reference of the user's information in our database.
+        let userRef = Database.database().reference().child("users").child(user.uid)
+        
+        //We read from the path we created and pass an event closure to handle the data (snapshot) that is passed back from the database.
+        userRef.observeSingleEvent(of: .value, with: { (snapshot) in
+        
+            //To retrieve the user data from DataSnapshot, we check that the snapshot exists, and that it is of the expected Dictionary type. Based on whether the user dictionary exists, we'll know whether the current user is a new or returning user.
+            if let userDict = snapshot.value as? [String : Any] {
+                print("User already exists \(userDict.debugDescription).")
+            } else {
+                print("New user!")
+            }
+        })
+        
     }
 }

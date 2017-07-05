@@ -10,6 +10,7 @@
 		4137584F524A582BA10220B9 /* Pods_Makestagram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58339703BB549442ECDAD74D /* Pods_Makestagram.framework */; };
 		911B79D01F0BCF49007D704C /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 911B79CF1F0BCF49007D704C /* Login.storyboard */; };
 		911B79D41F0BD5D0007D704C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911B79D31F0BD5D0007D704C /* LoginViewController.swift */; };
+		914A6CF21F0D80840059ECBE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914A6CF11F0D80840059ECBE /* User.swift */; };
 		91869A701F0ABC3C0049F362 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91869A6F1F0ABC3C0049F362 /* AppDelegate.swift */; };
 		91869A781F0ABC3C0049F362 /* Makestagram.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 91869A761F0ABC3C0049F362 /* Makestagram.xcdatamodeld */; };
 		91869A7A1F0ABC3C0049F362 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91869A791F0ABC3C0049F362 /* Assets.xcassets */; };
@@ -24,6 +25,7 @@
 		8B0B5AEF80215E3F6FBD7E55 /* Pods-Makestagram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Makestagram.release.xcconfig"; path = "Pods/Target Support Files/Pods-Makestagram/Pods-Makestagram.release.xcconfig"; sourceTree = "<group>"; };
 		911B79CF1F0BCF49007D704C /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Login.storyboard; path = Storyboards/Login.storyboard; sourceTree = "<group>"; };
 		911B79D31F0BD5D0007D704C /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = Controllers/LoginViewController.swift; sourceTree = "<group>"; };
+		914A6CF11F0D80840059ECBE /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Models/User.swift; sourceTree = "<group>"; };
 		91869A6C1F0ABC3C0049F362 /* Makestagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Makestagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91869A6F1F0ABC3C0049F362 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		91869A771F0ABC3C0049F362 /* Makestagram.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Makestagram.xcdatamodel; sourceTree = "<group>"; };
@@ -65,6 +67,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		914A6CF01F0D80550059ECBE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				914A6CF11F0D80840059ECBE /* User.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		91869A631F0ABC3C0049F362 = {
 			isa = PBXGroup;
 			children = (
@@ -86,6 +96,7 @@
 		91869A6E1F0ABC3C0049F362 /* Makestagram */ = {
 			isa = PBXGroup;
 			children = (
+				914A6CF01F0D80550059ECBE /* Models */,
 				91869A6F1F0ABC3C0049F362 /* AppDelegate.swift */,
 				91869A931F0AD6EF0049F362 /* View Controllers */,
 				91869A791F0ABC3C0049F362 /* Assets.xcassets */,
@@ -253,6 +264,7 @@
 				911B79D41F0BD5D0007D704C /* LoginViewController.swift in Sources */,
 				91869A8C1F0AD10F0049F362 /* ViewController.swift in Sources */,
 				91869A781F0ABC3C0049F362 /* Makestagram.xcdatamodeld in Sources */,
+				914A6CF21F0D80840059ECBE /* User.swift in Sources */,
 				91869A701F0ABC3C0049F362 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
