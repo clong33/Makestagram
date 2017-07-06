@@ -41,14 +41,6 @@ class LoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let identifier = segue.identifier {
-            if identifier == "createUsername" {
-                print("Table view cell tapped")
-                
-            }
-        }
-    }
 
 }
 
@@ -70,10 +62,10 @@ extension LoginViewController: FUIAuthDelegate {
         userRef.observeSingleEvent(of: .value, with: { (snapshot) in
         
             //To retrieve the user data from DataSnapshot, we check that the snapshot exists, and that it is of the expected Dictionary type. Based on whether the user dictionary exists, we'll know whether the current user is a new or returning user.
-            if let userDict = snapshot.value as? [String : Any] {
-                print("User already exists \(userDict.debugDescription).")
+            if let user = User(snapshot: snapshot) {
+                print("Welcome back \(user.username)")
             } else {
-                print("New user!")
+                self.performSegue(withIdentifier: "toCreateUsername", sender: self)
             }
         })
         
