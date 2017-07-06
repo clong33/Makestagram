@@ -59,11 +59,16 @@ extension LoginViewController: FUIAuthDelegate {
         let userRef = Database.database().reference().child("users").child(user.uid)
         
         //We read from the path we created and pass an event closure to handle the data (snapshot) that is passed back from the database.
-        userRef.observeSingleEvent(of: .value, with: { (snapshot) in
+        userRef.observeSingleEvent(of: .value, with: { [unowned self] (snapshot) in
         
-            //To retrieve the user data from DataSnapshot, we check that the snapshot exists, and that it is of the expected Dictionary type. Based on whether the user dictionary exists, we'll know whether the current user is a new or returning user.
             if let user = User(snapshot: snapshot) {
-                print("Welcome back \(user.username)")
+                let storyboard = UIStoryboard(name: "Main", bundle: .main)
+                User.setCurrent(user)
+                
+                if let initialViewController = storyboard.instantiateInitialViewController() {
+                    self.view.window?.rootViewController = initialViewController
+                    self.view.window?.makeKeyAndVisible()
+                }
             } else {
                 self.performSegue(withIdentifier: "toCreateUsername", sender: self)
             }
