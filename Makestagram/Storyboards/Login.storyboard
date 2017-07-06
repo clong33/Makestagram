@@ -67,6 +67,7 @@
                                 <state key="normal" title="Register or Log In"/>
                                 <connections>
                                     <action selector="logInButtonTapped:" destination="MdY-lB-lJs" eventType="touchUpInside" id="djI-AN-y8d"/>
+                                    <segue destination="Afc-tV-DmS" kind="show" identifier="createUsername" id="9h3-fo-Cb4"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -87,6 +88,83 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mEU-Wy-cOv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-180" y="92.203898050974516"/>
+        </scene>
+        <!--Create Username View Controller-->
+        <scene sceneID="OiN-vY-AKd">
+            <objects>
+                <viewController id="Afc-tV-DmS" userLabel="Create Username View Controller" customClass="CreateUsernameViewController" customModule="Makestagram" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="CJh-u9-Epk"/>
+                        <viewControllerLayoutGuide type="bottom" id="pbL-hx-IMc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="MdM-kU-7ry">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="0S5-GC-GDB">
+                                <rect key="frame" x="35" y="65" width="305" height="180"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create Username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nUi-DO-ngw">
+                                        <rect key="frame" x="69" y="0.0" width="167" height="29"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add a username so your friends can find you!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l13-oj-SN1">
+                                        <rect key="frame" x="13" y="47" width="279" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="p4c-hm-bl7"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uJa-Kq-ugf">
+                                        <rect key="frame" x="0.0" y="85" width="305" height="44"/>
+                                        <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="XzH-Ar-xOQ"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1X0-lL-cgJ">
+                                        <rect key="frame" x="20" y="147" width="265" height="33"/>
+                                        <color key="backgroundColor" red="0.38039215686274508" green="0.6588235294117647" blue="0.92941176470588238" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                        <state key="normal" title="Next"/>
+                                        <connections>
+                                            <action selector="nextButtonTapped:" destination="Afc-tV-DmS" eventType="touchUpInside" id="YG7-j2-QMC"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="1X0-lL-cgJ" secondAttribute="trailing" constant="20" id="DNQ-Ky-Zh1"/>
+                                    <constraint firstItem="uJa-Kq-ugf" firstAttribute="leading" secondItem="0S5-GC-GDB" secondAttribute="leading" id="GTe-OG-FgI"/>
+                                    <constraint firstItem="nUi-DO-ngw" firstAttribute="leading" secondItem="0S5-GC-GDB" secondAttribute="leading" constant="69" id="JME-Hs-Xci"/>
+                                    <constraint firstAttribute="trailing" secondItem="l13-oj-SN1" secondAttribute="trailing" constant="13" id="Sew-yS-I1u"/>
+                                    <constraint firstAttribute="trailing" secondItem="uJa-Kq-ugf" secondAttribute="trailing" id="aHl-gr-EcU"/>
+                                    <constraint firstItem="l13-oj-SN1" firstAttribute="leading" secondItem="0S5-GC-GDB" secondAttribute="leading" constant="13" id="cou-2s-JaV"/>
+                                    <constraint firstItem="1X0-lL-cgJ" firstAttribute="leading" secondItem="0S5-GC-GDB" secondAttribute="leading" constant="20" id="swh-R3-DUa"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="0S5-GC-GDB" secondAttribute="trailing" constant="35" id="0qy-ls-v7l"/>
+                            <constraint firstItem="0S5-GC-GDB" firstAttribute="top" secondItem="CJh-u9-Epk" secondAttribute="bottom" constant="45" id="MMS-v3-5T3"/>
+                            <constraint firstItem="0S5-GC-GDB" firstAttribute="leading" secondItem="MdM-kU-7ry" secondAttribute="leading" constant="35" id="kGH-OY-x0I"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="nextButton" destination="1X0-lL-cgJ" id="8yV-w2-Ekh"/>
+                        <outlet property="usernameTextField" destination="uJa-Kq-ugf" id="Ybk-0K-vgV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BLi-ab-O2H" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="621.60000000000002" y="121.88905547226388"/>
         </scene>
     </scenes>
 </document>

@@ -40,6 +40,15 @@ class LoginViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let identifier = segue.identifier {
+            if identifier == "createUsername" {
+                print("Table view cell tapped")
+                
+            }
+        }
+    }
 
 }
 

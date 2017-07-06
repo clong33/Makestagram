@@ -11,6 +11,7 @@
 		911B79D01F0BCF49007D704C /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 911B79CF1F0BCF49007D704C /* Login.storyboard */; };
 		911B79D41F0BD5D0007D704C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911B79D31F0BD5D0007D704C /* LoginViewController.swift */; };
 		914A6CF21F0D80840059ECBE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914A6CF11F0D80840059ECBE /* User.swift */; };
+		914A6CF41F0E78690059ECBE /* CreateUsernameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914A6CF31F0E78690059ECBE /* CreateUsernameViewController.swift */; };
 		91869A701F0ABC3C0049F362 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91869A6F1F0ABC3C0049F362 /* AppDelegate.swift */; };
 		91869A781F0ABC3C0049F362 /* Makestagram.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 91869A761F0ABC3C0049F362 /* Makestagram.xcdatamodeld */; };
 		91869A7A1F0ABC3C0049F362 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91869A791F0ABC3C0049F362 /* Assets.xcassets */; };
@@ -26,6 +27,7 @@
 		911B79CF1F0BCF49007D704C /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Login.storyboard; path = Storyboards/Login.storyboard; sourceTree = "<group>"; };
 		911B79D31F0BD5D0007D704C /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = Controllers/LoginViewController.swift; sourceTree = "<group>"; };
 		914A6CF11F0D80840059ECBE /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Models/User.swift; sourceTree = "<group>"; };
+		914A6CF31F0E78690059ECBE /* CreateUsernameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateUsernameViewController.swift; path = Controllers/CreateUsernameViewController.swift; sourceTree = "<group>"; };
 		91869A6C1F0ABC3C0049F362 /* Makestagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Makestagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91869A6F1F0ABC3C0049F362 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		91869A771F0ABC3C0049F362 /* Makestagram.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Makestagram.xcdatamodel; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 			children = (
 				91869A8B1F0AD10F0049F362 /* ViewController.swift */,
 				911B79D31F0BD5D0007D704C /* LoginViewController.swift */,
+				914A6CF31F0E78690059ECBE /* CreateUsernameViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 			files = (
 				911B79D41F0BD5D0007D704C /* LoginViewController.swift in Sources */,
 				91869A8C1F0AD10F0049F362 /* ViewController.swift in Sources */,
+				914A6CF41F0E78690059ECBE /* CreateUsernameViewController.swift in Sources */,
 				91869A781F0ABC3C0049F362 /* Makestagram.xcdatamodeld in Sources */,
 				914A6CF21F0D80840059ECBE /* User.swift in Sources */,
 				91869A701F0ABC3C0049F362 /* AppDelegate.swift in Sources */,
