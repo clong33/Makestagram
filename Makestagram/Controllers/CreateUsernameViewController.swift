@@ -30,7 +30,7 @@ class CreateUsernameViewController: UIViewController {
         UserService.create(firUser, username: username) { (user) in
             guard let user = user else { return }
             
-            User.setCurrent(user)
+            User.setCurrent(user, writeToUserDefaults: true)
                 //Get reference to the current window and set the rootViewController to the initial view controller
                 self.view.window?.rootViewController = UIStoryboard.initialViewController(for: .main)
                 self.view.window?.makeKeyAndVisible()
