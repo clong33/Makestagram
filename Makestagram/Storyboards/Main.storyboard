@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item 2-->
+        <!--View Controller-->
         <scene sceneID="yMU-VJ-R23">
             <objects>
                 <viewController id="2KM-zT-KZP" sceneMemberID="viewController">
@@ -22,16 +22,39 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="4ll-he-6M9"/>
+                    <tabBarItem key="tabBarItem" title="" image="tab_plus_black" selectedImage="tab_plus_black" id="4ll-he-6M9">
+                        <inset key="imageInsets" minX="0.0" minY="7" maxX="0.0" maxY="-7"/>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qOB-N8-Qdi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="595" y="385"/>
         </scene>
-        <!--Item 1-->
+        <!--Find Friends View Controller-->
+        <scene sceneID="xFz-1F-512">
+            <objects>
+                <viewController id="2ij-k7-wK2" customClass="FindFriendsViewController" customModule="Makestagram" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FUg-Lu-JyM"/>
+                        <viewControllerLayoutGuide type="bottom" id="jiP-lK-92u"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qBu-Cf-zqi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="tab_find_friends_black" selectedImage="tab_find_friends_black" id="w7r-Ge-TmH">
+                        <inset key="imageInsets" minX="0.0" minY="7" maxX="0.0" maxY="-7"/>
+                    </tabBarItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="grj-d7-blP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="593" y="1174"/>
+        </scene>
+        <!--Home View Controller-->
         <scene sceneID="Y4m-Kl-OCw">
             <objects>
-                <viewController id="3gx-er-y8J" sceneMemberID="viewController">
+                <viewController id="3gx-er-y8J" customClass="HomeViewController" customModule="Makestagram" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="QGw-T6-h3O"/>
                         <viewControllerLayoutGuide type="bottom" id="6YT-XH-DGL"/>
@@ -41,7 +64,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="ATu-Gs-uwQ"/>
+                    <tabBarItem key="tabBarItem" title="" image="tab_home_black" selectedImage="tab_home_black" id="ATu-Gs-uwQ">
+                        <inset key="imageInsets" minX="0.0" minY="7" maxX="0.0" maxY="-7"/>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0f3-kU-fjQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -59,6 +84,7 @@
                     <connections>
                         <segue destination="3gx-er-y8J" kind="relationship" relationship="viewControllers" id="qc1-gZ-5Ud"/>
                         <segue destination="2KM-zT-KZP" kind="relationship" relationship="viewControllers" id="kNF-Mm-9LJ"/>
+                        <segue destination="2ij-k7-wK2" kind="relationship" relationship="viewControllers" id="Rie-aw-VFd"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="12H-Yc-KtY" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -66,4 +92,9 @@
             <point key="canvasLocation" x="-357" y="58"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="tab_find_friends_black" width="25" height="25"/>
+        <image name="tab_home_black" width="25" height="25"/>
+        <image name="tab_plus_black" width="25" height="25"/>
+    </resources>
 </document>
