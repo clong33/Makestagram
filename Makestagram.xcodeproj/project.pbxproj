@@ -15,12 +15,11 @@
 		914A6CF71F0EC3CC0059ECBE /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914A6CF61F0EC3CC0059ECBE /* UserService.swift */; };
 		914A6CF91F0FC5370059ECBE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914A6CF81F0FC5370059ECBE /* Constants.swift */; };
 		914A6CFC1F0FC6750059ECBE /* Storyboard+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914A6CFB1F0FC6750059ECBE /* Storyboard+Utility.swift */; };
+		914A6CFE1F0FD3F20059ECBE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 914A6CFD1F0FD3F20059ECBE /* Main.storyboard */; };
 		91869A701F0ABC3C0049F362 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91869A6F1F0ABC3C0049F362 /* AppDelegate.swift */; };
 		91869A781F0ABC3C0049F362 /* Makestagram.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 91869A761F0ABC3C0049F362 /* Makestagram.xcdatamodeld */; };
 		91869A7A1F0ABC3C0049F362 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91869A791F0ABC3C0049F362 /* Assets.xcassets */; };
 		91869A881F0ACEEA0049F362 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 91869A861F0ACEEA0049F362 /* GoogleService-Info.plist */; };
-		91869A8C1F0AD10F0049F362 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91869A8B1F0AD10F0049F362 /* ViewController.swift */; };
-		91869A8E1F0AD1650049F362 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91869A8D1F0AD1650049F362 /* Main.storyboard */; };
 		91869A901F0AD19A0049F362 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91869A8F1F0AD19A0049F362 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -34,14 +33,13 @@
 		914A6CF61F0EC3CC0059ECBE /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserService.swift; path = Services/UserService.swift; sourceTree = "<group>"; };
 		914A6CF81F0FC5370059ECBE /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Supporting/Constants.swift; sourceTree = "<group>"; };
 		914A6CFB1F0FC6750059ECBE /* Storyboard+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Storyboard+Utility.swift"; path = "Extensions/Storyboard+Utility.swift"; sourceTree = "<group>"; };
+		914A6CFD1F0FD3F20059ECBE /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Storyboards/Main.storyboard; sourceTree = "<group>"; };
 		91869A6C1F0ABC3C0049F362 /* Makestagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Makestagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91869A6F1F0ABC3C0049F362 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		91869A771F0ABC3C0049F362 /* Makestagram.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Makestagram.xcdatamodel; sourceTree = "<group>"; };
 		91869A791F0ABC3C0049F362 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		91869A861F0ACEEA0049F362 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "Supporting/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		91869A871F0ACEEA0049F362 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Supporting/Info.plist; sourceTree = "<group>"; };
-		91869A8B1F0AD10F0049F362 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = Controllers/ViewController.swift; sourceTree = "<group>"; };
-		91869A8D1F0AD1650049F362 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Storyboards/Main.storyboard; sourceTree = "<group>"; };
 		91869A8F1F0AD19A0049F362 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Storyboards/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F5A32531DB74C22B793470E6 /* Pods-Makestagram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Makestagram.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Makestagram/Pods-Makestagram.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -136,7 +134,6 @@
 		91869A931F0AD6EF0049F362 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				91869A8B1F0AD10F0049F362 /* ViewController.swift */,
 				911B79D31F0BD5D0007D704C /* LoginViewController.swift */,
 				914A6CF31F0E78690059ECBE /* CreateUsernameViewController.swift */,
 			);
@@ -157,8 +154,8 @@
 		91869A951F0AD7CA0049F362 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				91869A8D1F0AD1650049F362 /* Main.storyboard */,
 				911B79CF1F0BCF49007D704C /* Login.storyboard */,
+				914A6CFD1F0FD3F20059ECBE /* Main.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -226,11 +223,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				91869A8E1F0AD1650049F362 /* Main.storyboard in Resources */,
 				91869A881F0ACEEA0049F362 /* GoogleService-Info.plist in Resources */,
 				91869A901F0AD19A0049F362 /* LaunchScreen.storyboard in Resources */,
 				911B79D01F0BCF49007D704C /* Login.storyboard in Resources */,
 				91869A7A1F0ABC3C0049F362 /* Assets.xcassets in Resources */,
+				914A6CFE1F0FD3F20059ECBE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,7 +288,6 @@
 			files = (
 				914A6CF71F0EC3CC0059ECBE /* UserService.swift in Sources */,
 				911B79D41F0BD5D0007D704C /* LoginViewController.swift in Sources */,
-				91869A8C1F0AD10F0049F362 /* ViewController.swift in Sources */,
 				914A6CF41F0E78690059ECBE /* CreateUsernameViewController.swift in Sources */,
 				91869A781F0ABC3C0049F362 /* Makestagram.xcdatamodeld in Sources */,
 				914A6CF21F0D80840059ECBE /* User.swift in Sources */,
