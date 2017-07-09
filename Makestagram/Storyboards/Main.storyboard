@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="tab_plus_black" selectedImage="tab_plus_black" id="4ll-he-6M9">
+                    <tabBarItem key="tabBarItem" tag="1" title="" image="tab_plus_black" selectedImage="tab_plus_black" id="4ll-he-6M9">
                         <inset key="imageInsets" minX="0.0" minY="7" maxX="0.0" maxY="-7"/>
                     </tabBarItem>
                 </viewController>
@@ -43,7 +43,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="tab_find_friends_black" selectedImage="tab_find_friends_black" id="w7r-Ge-TmH">
+                    <tabBarItem key="tabBarItem" tag="2" title="" image="tab_find_friends_black" selectedImage="tab_find_friends_black" id="w7r-Ge-TmH">
                         <inset key="imageInsets" minX="0.0" minY="7" maxX="0.0" maxY="-7"/>
                     </tabBarItem>
                 </viewController>
@@ -72,10 +72,10 @@
             </objects>
             <point key="canvasLocation" x="594" y="-270"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Main Tab Bar Controller-->
         <scene sceneID="1Lz-Lv-3zN">
             <objects>
-                <tabBarController id="tEn-3w-UMG" sceneMemberID="viewController">
+                <tabBarController id="tEn-3w-UMG" customClass="MainTabBarController" customModule="Makestagram" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="5aG-rW-eTA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
