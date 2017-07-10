@@ -30,6 +30,7 @@
 		9196A8BC1F13C1A3002C8624 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9196A8BB1F13C1A3002C8624 /* Post.swift */; };
 		9196A8BE1F13D795002C8624 /* UIImage+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9196A8BD1F13D795002C8624 /* UIImage+Size.swift */; };
 		9196A8C01F13D89D002C8624 /* StorageReference+Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9196A8BF1F13D89D002C8624 /* StorageReference+Post.swift */; };
+		9196A8C21F13ECDF002C8624 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9196A8C11F13ECDF002C8624 /* Home.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +60,7 @@
 		9196A8BB1F13C1A3002C8624 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Post.swift; path = Models/Post.swift; sourceTree = "<group>"; };
 		9196A8BD1F13D795002C8624 /* UIImage+Size.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImage+Size.swift"; path = "Extensions/UIImage+Size.swift"; sourceTree = "<group>"; };
 		9196A8BF1F13D89D002C8624 /* StorageReference+Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "StorageReference+Post.swift"; path = "Extensions/StorageReference+Post.swift"; sourceTree = "<group>"; };
+		9196A8C11F13ECDF002C8624 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Home.storyboard; path = Storyboards/Home.storyboard; sourceTree = "<group>"; };
 		F5A32531DB74C22B793470E6 /* Pods-Makestagram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Makestagram.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Makestagram/Pods-Makestagram.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -191,6 +193,7 @@
 			children = (
 				911B79CF1F0BCF49007D704C /* Login.storyboard */,
 				914A6CFD1F0FD3F20059ECBE /* Main.storyboard */,
+				9196A8C11F13ECDF002C8624 /* Home.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 				91869A881F0ACEEA0049F362 /* GoogleService-Info.plist in Resources */,
 				91869A901F0AD19A0049F362 /* LaunchScreen.storyboard in Resources */,
 				911B79D01F0BCF49007D704C /* Login.storyboard in Resources */,
+				9196A8C21F13ECDF002C8624 /* Home.storyboard in Resources */,
 				91869A7A1F0ABC3C0049F362 /* Assets.xcassets in Resources */,
 				914A6CFE1F0FD3F20059ECBE /* Main.storyboard in Resources */,
 			);
