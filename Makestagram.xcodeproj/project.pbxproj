@@ -31,6 +31,7 @@
 		9196A8BE1F13D795002C8624 /* UIImage+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9196A8BD1F13D795002C8624 /* UIImage+Size.swift */; };
 		9196A8C01F13D89D002C8624 /* StorageReference+Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9196A8BF1F13D89D002C8624 /* StorageReference+Post.swift */; };
 		9196A8C21F13ECDF002C8624 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9196A8C11F13ECDF002C8624 /* Home.storyboard */; };
+		9196A8C51F141389002C8624 /* PostImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9196A8C41F141389002C8624 /* PostImageCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +62,7 @@
 		9196A8BD1F13D795002C8624 /* UIImage+Size.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImage+Size.swift"; path = "Extensions/UIImage+Size.swift"; sourceTree = "<group>"; };
 		9196A8BF1F13D89D002C8624 /* StorageReference+Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "StorageReference+Post.swift"; path = "Extensions/StorageReference+Post.swift"; sourceTree = "<group>"; };
 		9196A8C11F13ECDF002C8624 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Home.storyboard; path = Storyboards/Home.storyboard; sourceTree = "<group>"; };
+		9196A8C41F141389002C8624 /* PostImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostImageCell.swift; path = Views/PostImageCell.swift; sourceTree = "<group>"; };
 		F5A32531DB74C22B793470E6 /* Pods-Makestagram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Makestagram.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Makestagram/Pods-Makestagram.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -151,6 +153,7 @@
 		91869A6E1F0ABC3C0049F362 /* Makestagram */ = {
 			isa = PBXGroup;
 			children = (
+				9196A8C31F14136E002C8624 /* Views */,
 				91566CB21F1028240028B09D /* Helpers */,
 				914A6CFA1F0FC6560059ECBE /* Extensions */,
 				914A6CF51F0EC3910059ECBE /* Services */,
@@ -196,6 +199,14 @@
 				9196A8C11F13ECDF002C8624 /* Home.storyboard */,
 			);
 			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		9196A8C31F14136E002C8624 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9196A8C41F141389002C8624 /* PostImageCell.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -332,6 +343,7 @@
 				9196A8BE1F13D795002C8624 /* UIImage+Size.swift in Sources */,
 				91566CB41F10285B0028B09D /* MGPhotoHelper.swift in Sources */,
 				9196A8C01F13D89D002C8624 /* StorageReference+Post.swift in Sources */,
+				9196A8C51F141389002C8624 /* PostImageCell.swift in Sources */,
 				91869A781F0ABC3C0049F362 /* Makestagram.xcdatamodeld in Sources */,
 				914A6CF21F0D80840059ECBE /* User.swift in Sources */,
 				9196A8B81F13B7F2002C8624 /* StorageService.swift in Sources */,
