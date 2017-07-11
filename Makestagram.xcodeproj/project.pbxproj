@@ -32,6 +32,8 @@
 		9196A8C01F13D89D002C8624 /* StorageReference+Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9196A8BF1F13D89D002C8624 /* StorageReference+Post.swift */; };
 		9196A8C21F13ECDF002C8624 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9196A8C11F13ECDF002C8624 /* Home.storyboard */; };
 		9196A8C51F141389002C8624 /* PostImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9196A8C41F141389002C8624 /* PostImageCell.swift */; };
+		9196A8C71F14773B002C8624 /* PostHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9196A8C61F14773B002C8624 /* PostHeaderCell.swift */; };
+		91DD2EDC1F150BBA003F7AFE /* PostActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DD2EDB1F150BBA003F7AFE /* PostActionCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +65,8 @@
 		9196A8BF1F13D89D002C8624 /* StorageReference+Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "StorageReference+Post.swift"; path = "Extensions/StorageReference+Post.swift"; sourceTree = "<group>"; };
 		9196A8C11F13ECDF002C8624 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Home.storyboard; path = Storyboards/Home.storyboard; sourceTree = "<group>"; };
 		9196A8C41F141389002C8624 /* PostImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostImageCell.swift; path = Views/PostImageCell.swift; sourceTree = "<group>"; };
+		9196A8C61F14773B002C8624 /* PostHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostHeaderCell.swift; path = Views/PostHeaderCell.swift; sourceTree = "<group>"; };
+		91DD2EDB1F150BBA003F7AFE /* PostActionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostActionCell.swift; path = Views/PostActionCell.swift; sourceTree = "<group>"; };
 		F5A32531DB74C22B793470E6 /* Pods-Makestagram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Makestagram.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Makestagram/Pods-Makestagram.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -205,6 +209,8 @@
 			isa = PBXGroup;
 			children = (
 				9196A8C41F141389002C8624 /* PostImageCell.swift */,
+				9196A8C61F14773B002C8624 /* PostHeaderCell.swift */,
+				91DD2EDB1F150BBA003F7AFE /* PostActionCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -343,6 +349,7 @@
 				9196A8BE1F13D795002C8624 /* UIImage+Size.swift in Sources */,
 				91566CB41F10285B0028B09D /* MGPhotoHelper.swift in Sources */,
 				9196A8C01F13D89D002C8624 /* StorageReference+Post.swift in Sources */,
+				91DD2EDC1F150BBA003F7AFE /* PostActionCell.swift in Sources */,
 				9196A8C51F141389002C8624 /* PostImageCell.swift in Sources */,
 				91869A781F0ABC3C0049F362 /* Makestagram.xcdatamodeld in Sources */,
 				914A6CF21F0D80840059ECBE /* User.swift in Sources */,
@@ -353,6 +360,7 @@
 				91566CAD1F0FE5240028B09D /* HomeViewController.swift in Sources */,
 				914A6CFC1F0FC6750059ECBE /* Storyboard+Utility.swift in Sources */,
 				91869A701F0ABC3C0049F362 /* AppDelegate.swift in Sources */,
+				9196A8C71F14773B002C8624 /* PostHeaderCell.swift in Sources */,
 				914A6CF91F0FC5370059ECBE /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

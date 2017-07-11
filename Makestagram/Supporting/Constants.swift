@@ -24,4 +24,8 @@ struct Constants {
         static let picture = 1
         static let friends = 2
     }
+    
+    struct PostCell {
+        static let imageCell = "PostImageCell"
+    }
 }
