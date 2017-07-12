@@ -74,7 +74,8 @@ extension HomeViewController: UITableViewDataSource {
             
         case 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: "PostActionCell") as! PostActionCell
-            cell.timeAgoLabel.text = timestampFormatter.string(from: post.creationDate)
+            cell.delegate = self
+            configureCell(cell, with: post)
             return cell
             
         default:
@@ -84,6 +85,12 @@ extension HomeViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return posts.count
+    }
+    
+    func configureCell(_ cell: PostActionCell, with post: Post) {
+        cell.timeAgoLabel.text = timestampFormatter.string(from: post.creationDate)
+        cell.likeButton.isSelected = post.isLiked
+        cell.likeCountLabel.text = "\(post.likeCount) likes"
     }
 }
 
@@ -106,4 +113,41 @@ extension HomeViewController: UITableViewDelegate {
         }
     }
     
+}
+
+extension HomeViewController: PostActionCellDelegate {
+    func didTapLikeButton(_ likeButton: UIButton, on cell: PostActionCell) {
+        // make sure the index path exists for given cell
+        guard let indexPath = tableView.indexPath(for: cell)
+            else { return }
+        
+        // set to false so user cannot tap like button quickly
+        likeButton.isUserInteractionEnabled = false
+        // reference post by index path section
+        let post = posts[indexPath.section]
+        
+        // 4
+        LikeService.setIsLiked(!post.isLiked, for: post) { (success) in
+            // user interaction is enabled after closure ends
+            defer {
+                likeButton.isUserInteractionEnabled = true
+            }
+            
+            // 6
+            guard success else { return }
+            
+            // 7
+            post.likeCount += !post.isLiked ? 1 : -1
+            post.isLiked = !post.isLiked
+            
+            // 8
+            guard let cell = self.tableView.cellForRow(at: indexPath) as? PostActionCell
+                else { return }
+            
+            // 9
+            DispatchQueue.main.async {
+                self.configureCell(cell, with: post)
+            }
+        }
+    }
 }
