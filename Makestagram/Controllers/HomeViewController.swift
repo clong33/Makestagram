@@ -13,6 +13,7 @@ class HomeViewController: UIViewController {
     // MARK: - Properties
     
     var posts = [Post]()
+    let refreshControl = UIRefreshControl()
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -29,10 +30,7 @@ class HomeViewController: UIViewController {
 
         configureTableView()
         
-        UserService.timeline { (posts) in
-            self.posts = posts
-            self.tableView.reloadData()
-        }
+        reloadTimeline()
         // Do any additional setup after loading the view.
     }
 
@@ -47,7 +45,21 @@ class HomeViewController: UIViewController {
         tableView.tableFooterView = UIView()
         // remove separators from cells
         tableView.separatorStyle = .none
+        //add refresh action to table view
+        refreshControl.addTarget(self, action: #selector(reloadTimeline), for: .valueChanged)
+        tableView.addSubview(refreshControl)
     }
+    
+    func reloadTimeline() {
+        UserService.timeline { (posts) in
+            self.posts = posts
+            
+            if self.refreshControl.isRefreshing {
+                self.refreshControl.endRefreshing()
+            }
+            
+            self.tableView.reloadData()
+        }
 
 }
 
