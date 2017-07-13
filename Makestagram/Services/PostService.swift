@@ -25,17 +25,46 @@ struct PostService {
     }
     
     private static func create(forURLString urlString: String, aspectHeight: CGFloat) {
-        //create new post in database
-        // get user reference
         let currentUser = User.current
-        // create post
         let post = Post(imageURL: urlString, imageHeight: aspectHeight)
-        // compute dictionary of post that contains time at which post was created, image url, and image height
-        let dict = post.dictValue
         
-        // get path to place post
-        let postRef = Database.database().reference().child("posts").child(currentUser.uid).childByAutoId()
-        //place post in database
-        postRef.updateChildValues(dict)
+        //
+        let rootRef = Database.database().reference()
+        let newPostRef = rootRef.child("posts").child(currentUser.uid).childByAutoId()
+        let newPostKey = newPostRef.key
+        
+        // get array of all followers UIDs
+        UserService.followers(for: currentUser) { (followerUIDs) in
+            
+            let timelinePostDict = ["poster_uid" : currentUser.uid]
+        
+            var updatedData: [String : Any] = ["timeline/\(currentUser.uid)/\(newPostKey)" : timelinePostDict]
+            
+            // add post to each of followers timelines
+            for uid in followerUIDs {
+                updatedData["timeline/\(uid)/\(newPostKey)"] = timelinePostDict
+            }
+            
+            // write post to multiple locations in database
+            let postDict = post.dictValue
+            updatedData["posts/\(currentUser.uid)/\(newPostKey)"] = postDict
+            
+            rootRef.updateChildValues(updatedData)
+        }
+    }
+    
+    static func show(forKey posterKey: String, posterUID: String, completion: @escaping (Post?) -> Void) {
+        let ref = Database.database().reference().child("posts").child(posterUID).child(posterKey)
+        
+        ref.observeSingleEvent(of: .value, with: { (snapshot) in
+            guard let post = Post(snapshot: snapshot) else {
+                return completion(nil)
+            }
+            
+            LikeService.isPostLiked(post) { (isLiked) in
+                post.isLiked = isLiked
+                completion(post)
+            }
+        })
     }
 }

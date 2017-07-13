@@ -35,8 +35,26 @@ struct FollowService {
                 assertionFailure(error.localizedDescription)
             }
             
-            // 3
-            success(error == nil)
+            // 1
+            UserService.posts(for: user) { (posts) in
+                // 2
+                let postKeys = posts.flatMap { $0.key }
+                
+                // 3
+                var followData = [String : Any]()
+                let timelinePostDict = ["poster_uid" : user.uid]
+                postKeys.forEach { followData["timeline/\(currentUID)/\($0)"] = timelinePostDict }
+                
+                // 4
+                ref.updateChildValues(followData, withCompletionBlock: { (error, ref) in
+                    if let error = error {
+                        assertionFailure(error.localizedDescription)
+                    }
+                    
+                    // 5
+                    success(error == nil)
+                })
+            }
         }
     }
     
@@ -44,19 +62,35 @@ struct FollowService {
      method to unfollower users
      */
     private static func unfollowUser(_ user: User, forCurrentUserWithSuccess success: @escaping (Bool) -> Void) {
+        let currentUID = User.current.uid
         // Use NSNull() object instead of nil because updateChildValues expects type [Hashable : Any]
         // http://stackoverflow.com/questions/38462074/using-updatechildvalues-to-delete-from-firebase
-        let currentUID = User.current.uid
-        let unfollowData = ["followers/\(user.uid)/\(currentUID)" : NSNull(),
-                            "following/\(currentUID)/\(user.uid)" : NSNull()]
+        let followData = ["followers/\(user.uid)/\(currentUID)" : NSNull(),
+                          "following/\(currentUID)/\(user.uid)" : NSNull()]
         
-        //write relationship to database
         let ref = Database.database().reference()
-        ref.updateChildValues(unfollowData) { (error, ref) in
+        ref.updateChildValues(followData) { (error, ref) in
             if let error = error {
                 assertionFailure(error.localizedDescription)
+                return success(false)
             }
-         success(error == nil)
+            
+            UserService.posts(for: user, completion: { (posts) in
+                var unfollowData = [String : Any]()
+                let postsKeys = posts.flatMap { $0.key }
+                postsKeys.forEach {
+                    // Use NSNull() object instead of nil because updateChildValues expects type [Hashable : Any]
+                    unfollowData["timeline/\(currentUID)/\($0)"] = NSNull()
+                }
+                
+                ref.updateChildValues(unfollowData, withCompletionBlock: { (error, ref) in
+                    if let error = error {
+                        assertionFailure(error.localizedDescription)
+                    }
+                    
+                    success(error == nil)
+                })
+            })
         }
     }
     

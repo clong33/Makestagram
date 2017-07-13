@@ -27,11 +27,12 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        UserService.posts(for: User.current) { (posts) in
+        configureTableView()
+        
+        UserService.timeline { (posts) in
             self.posts = posts
             self.tableView.reloadData()
         }
-        configureTableView()
         // Do any additional setup after loading the view.
     }
 
@@ -61,7 +62,7 @@ extension HomeViewController: UITableViewDataSource {
         switch indexPath.row {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "PostHeaderCell") as! PostHeaderCell
-            cell.usernameLabel.text = User.current.username
+            cell.usernameLabel.text = post.poster.username
             
             return cell
             
