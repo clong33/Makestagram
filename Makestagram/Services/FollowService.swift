@@ -23,37 +23,77 @@ struct FollowService {
      method to follow users
     */
     private static func followUser(_ user: User, forCurrentUserWithSuccess success: @escaping (Bool) -> Void) {
-        // Dictionary to update multiple locations at once
         let currentUID = User.current.uid
         let followData = ["followers/\(user.uid)/\(currentUID)" : true,
                           "following/\(currentUID)/\(user.uid)" : true]
         
-        // write relationship to database
         let ref = Database.database().reference()
         ref.updateChildValues(followData) { (error, _) in
             if let error = error {
                 assertionFailure(error.localizedDescription)
+                success(false)
             }
             
-            // 1
+            let dispatchGroup = DispatchGroup()
+            
+            //new group has entered
+            dispatchGroup.enter()
+            
+            // HOW do transaction blocks and dispatchgroups interact?
+            //why do we enter a dispatch group, leave it and then enter a new one? why not stay in the same one?
+            //how should i visualize dispatch groups?
+            let followingCountRef = Database.database().reference().child("users").child(currentUID).child("following_count")
+            followingCountRef.runTransactionBlock({ (mutableData) -> TransactionResult in
+                // 4
+                let currentCount = mutableData.value as? Int ?? 0
+                mutableData.value = currentCount + 1
+                
+                return TransactionResult.success(withValue: mutableData)
+            }, andCompletionBlock: { (error, _, _) in
+                if let error = error {
+                    assertionFailure(error.localizedDescription)
+                }
+                
+                dispatchGroup.leave()
+            })
+            
+            // 5
+            dispatchGroup.enter()
+            let followerCountRef = Database.database().reference().child("users").child(user.uid).child("follower_count")
+            followerCountRef.runTransactionBlock({ (mutableData) -> TransactionResult in
+                let currentCount = mutableData.value as? Int ?? 0
+                mutableData.value = currentCount + 1
+                
+                return TransactionResult.success(withValue: mutableData)
+            }, andCompletionBlock: { (error, _, _) in
+                if let error = error {
+                    assertionFailure(error.localizedDescription)
+                }
+                
+                dispatchGroup.leave()
+            })
+            
+            // add users posts to current users timeline
+            dispatchGroup.enter()
             UserService.posts(for: user) { (posts) in
-                // 2
                 let postKeys = posts.flatMap { $0.key }
                 
-                // 3
                 var followData = [String : Any]()
                 let timelinePostDict = ["poster_uid" : user.uid]
                 postKeys.forEach { followData["timeline/\(currentUID)/\($0)"] = timelinePostDict }
                 
-                // 4
                 ref.updateChildValues(followData, withCompletionBlock: { (error, ref) in
                     if let error = error {
                         assertionFailure(error.localizedDescription)
                     }
                     
-                    // 5
-                    success(error == nil)
+                    dispatchGroup.leave()
                 })
+            }
+            
+            // notify
+            dispatchGroup.notify(queue: .main) {
+                success(true)
             }
         }
     }
@@ -75,6 +115,39 @@ struct FollowService {
                 return success(false)
             }
             
+            let dispatchGroup = DispatchGroup()
+            
+            dispatchGroup.enter()
+            let followingCountRef = Database.database().reference().child("users").child(currentUID).child("following_count")
+            followingCountRef.runTransactionBlock({ (mutableData) -> TransactionResult in
+                let currentCount = mutableData.value as? Int ?? 0
+                mutableData.value = currentCount - 1
+                
+                return TransactionResult.success(withValue: mutableData)
+            }, andCompletionBlock: { (error, _, _) in
+                if let error = error {
+                    assertionFailure(error.localizedDescription)
+                }
+                
+                dispatchGroup.leave()
+            })
+            
+            dispatchGroup.enter()
+            let followerCountRef = Database.database().reference().child("users").child(user.uid).child("follower_count")
+            followerCountRef.runTransactionBlock({ (mutableData) -> TransactionResult in
+                let currentCount = mutableData.value as? Int ?? 0
+                mutableData.value = currentCount - 1
+                
+                return TransactionResult.success(withValue: mutableData)
+            }, andCompletionBlock: { (error, _, _) in
+                if let error = error {
+                    assertionFailure(error.localizedDescription)
+                }
+                
+                dispatchGroup.leave()
+            })
+            
+            dispatchGroup.enter()
             UserService.posts(for: user, completion: { (posts) in
                 var unfollowData = [String : Any]()
                 let postsKeys = posts.flatMap { $0.key }
@@ -88,9 +161,13 @@ struct FollowService {
                         assertionFailure(error.localizedDescription)
                     }
                     
-                    success(error == nil)
+                    dispatchGroup.leave()
                 })
             })
+            
+            dispatchGroup.notify(queue: .main) {
+                success(true)
+            }
         }
     }
     

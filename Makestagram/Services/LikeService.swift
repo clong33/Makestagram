@@ -19,7 +19,7 @@ struct LikeService {
         // 2
         let currentUID = User.current.uid
         
-        let likesRef = Database.database().reference().child("postLikes").child(key).child(currentUID)
+        let likesRef = DatabaseReference.toLocation(.showPost(uid: currentUID, posterKey: key))
         likesRef.setValue(true) { (error, _) in
             if let error = error {
                 assertionFailure(error.localizedDescription)
