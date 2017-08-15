@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="tEn-3w-UMG">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="tEn-3w-UMG">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -42,7 +42,7 @@
                     <connections>
                         <segue destination="ipg-yh-hdr" kind="relationship" relationship="viewControllers" id="qc1-gZ-5Ud"/>
                         <segue destination="2KM-zT-KZP" kind="relationship" relationship="viewControllers" id="kNF-Mm-9LJ"/>
-                        <segue destination="JEr-y7-BZU" kind="relationship" relationship="viewControllers" id="Rie-aw-VFd"/>
+                        <segue destination="Vme-3u-epy" kind="relationship" relationship="viewControllers" id="7TD-vq-JEO"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="12H-Yc-KtY" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -59,15 +59,15 @@
             </objects>
             <point key="canvasLocation" x="-1279" y="899"/>
         </scene>
-        <!--FindFriends-->
-        <scene sceneID="ANG-Xw-3CU">
+        <!--Profile-->
+        <scene sceneID="7mr-18-rHl">
             <objects>
-                <viewControllerPlaceholder storyboardName="FindFriends" id="JEr-y7-BZU" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="mSq-2v-U1r"/>
+                <viewControllerPlaceholder storyboardName="Profile" id="Vme-3u-epy" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="db2-ny-0lQ"/>
                 </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="o8c-ii-EjX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LrW-C4-9dM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="580" y="899.10044977511257"/>
+            <point key="canvasLocation" x="397.60000000000002" y="957.57121439280365"/>
         </scene>
     </scenes>
     <resources>
